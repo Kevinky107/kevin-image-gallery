@@ -5,12 +5,13 @@ import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 import './Nav.css'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function Nav() {
 
   const navigate = useNavigate();
-  const [page, setPage] = useState("/")
+  const location = useLocation();
+  const [page, setPage] = useState(location.pathname)
 
   function changePage() {
     if(page === "/"){

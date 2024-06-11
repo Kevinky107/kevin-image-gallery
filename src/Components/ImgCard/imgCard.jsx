@@ -6,7 +6,7 @@ import { faBookmark } from '@fortawesome/free-regular-svg-icons'
 import { faDownload } from '@fortawesome/free-solid-svg-icons'
 
 import './imgCard.css'
-import { saveImage, removeImage, lookforImage } from '../../features/saved_images/savedImages'
+import { saveImage, removeImage } from '../../features/saved_images/savedImages'
 import { useDispatch } from 'react-redux'
 
 function ImgCard({source, alt, id, height, width, likes} ) {
@@ -16,8 +16,17 @@ function ImgCard({source, alt, id, height, width, likes} ) {
     }
 
     const dispatch = useDispatch()
+    
+    function isSaved() {
+      let finded = false;
+      JSON.parse(localStorage.getItem('saved')).forEach(image => {
+        if(image.id === id)
+          finded = true;
+      });
+      return finded
+    }
 
-    const [save, setSave] = useState(dispatch(lookforImage(id)))
+    const [save, setSave] = useState(isSaved)
 
     function saveActualImage() {
       if(!save) {

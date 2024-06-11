@@ -11,19 +11,10 @@ export const savedImagesSlice = createSlice({
             localStorage.setItem('saved', JSON.stringify(state.data))
         },
         removeImage : (state, action) => {
-            state.data = state.data.filter(saved => saved.id !== action.payload)
+            state.data = state.data(localStorage.getItem('saved')).filter(saved => saved.id !== action.payload)
             localStorage.setItem('saved', JSON.stringify(state.data))
-        },
-        lookforImage : (state, action) => {
-            const answer = state.data.filter(saved => saved.id === action.payload)
-            let finded = false;
-
-            if(answer.length > 0)
-                finded = true
-
-            return finded
         }
     },
 })
 
-export const { saveImage, removeImage, lookforImage } = savedImagesSlice.actions
+export const { saveImage, removeImage } = savedImagesSlice.actions
