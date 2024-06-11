@@ -1,0 +1,19 @@
+.searchbar{
+    display:inline-flex;
+    background-color: rgb(240,240,240);
+    padding: 0.5em;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    border-radius: 4em;
+    width: 100%;
+
+    input{
+        background-color: rgb(240,240,240);
+        border: none;
+        width: 100%;
+    }
+
+    svg{
+        padding-right: 0.1em;
+    }
+}

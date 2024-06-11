@@ -1,0 +1,41 @@
+.header-container {
+    position: relative;
+    color: white;
+    background-image: url('/resources/Flores-oscuro.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    max-height: 40em;
+    height: 40em;
+  }
+  
+  .header-text {
+    text-align: left;
+    position: absolute;
+    width: 75%;
+    height: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    max-width: 35em;
+  }
+  
+  .header-text h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding-bottom: 1em;
+  }
+  
+  .header-text h2 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  @media only screen and (min-width: 1000px) {
+
+    .header-text{
+        text-align: center;
+    }
+
+  }

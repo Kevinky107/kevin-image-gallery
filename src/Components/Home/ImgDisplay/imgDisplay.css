@@ -1,0 +1,45 @@
+.gallery{
+    padding-top: 2em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-inline: 20%;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    img{
+        width: 20em;
+        align-self: flex-start;
+        height: fit-content;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .gallery {
+        padding-inline: 0;
+        display: block;
+        column-count: 2;
+        column-gap: 1em;
+        width: 650px;
+        margin: 0 auto;
+
+        img{
+            padding-bottom: 1em;
+        }
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .gallery {
+        padding-inline: 0;
+        display: block;
+        column-count: 3;
+        column-gap: 1em;
+        width: 1000px;
+        margin: 0 auto;
+
+        img{
+            padding-bottom: 1em;
+        }
+    }
+}
