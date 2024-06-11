@@ -27,7 +27,6 @@
     font-size: 1.5rem;
     padding-left: 0.5em;
     color: white;
-    cursor: pointer;
 }
 
 @media screen and (min-width: 700px) {
@@ -36,6 +35,7 @@
         bottom: 1.2em;
         width: 101%;
     }
+
 }
 
 @media screen and (min-width: 1050px) {
@@ -43,5 +43,17 @@
     .overImg {
         bottom: 1.2em;
         width: 99.5%;
+        display: none;
+    }
+
+    .imgContainer:hover {
+        cursor: pointer;
+        .overImg{
+            display: block;
+        }
+    }
+
+    .svgSave:hover, .svgDownload:hover {
+        color: rgb(255,147,199);
     }
 }

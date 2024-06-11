@@ -15,5 +15,15 @@
 }
 
 body {
-    min-width: 320px;
+    min-width: 340px;
+}
+
+Nav{
+  position: fixed;
+  z-index: 3;
+  top: 0;
+}
+
+main{
+  padding-top: 4em;
 }

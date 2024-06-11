@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { imagesDataSelector, imagesErrorSelector, imagesStatusSelector } from '../../../features/images/imagesSlice';
 import { getImagesThunk } from '../../../features/images/imagesThunk';
 import { useDispatch } from 'react-redux';
-import ImgCard from './ImgCard/imgCard'
+import ImgCard from '../../ImgCard/imgCard';
 
 import './imgDisplay.css'
 
