@@ -25,7 +25,7 @@ function Nav() {
 
   return (
     <nav>
-      <img src="resources/Logo.png" alt="Logo" />
+      <img src="resources/Logo.svg" alt="Logo" />
       <div className="nav__right">
         <Search/>
         <FontAwesomeIcon id="bttn-ico" icon={page == "/" ? faBookmark : faHouse} onClick={changePage} />

@@ -16,10 +16,11 @@ function ImgCard({source, alt, id, height, width, likes} ) {
     }
 
     const dispatch = useDispatch()
+    const localdata = JSON.parse(localStorage.getItem('saved')) || []
     
     function isSaved() {
       let finded = false;
-      JSON.parse(localStorage.getItem('saved')).forEach(image => {
+      localdata.forEach(image => {
         if(image.id === id)
           finded = true;
       });

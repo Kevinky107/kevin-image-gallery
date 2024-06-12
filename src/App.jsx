@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import Nav from './Components/Nav/Nav'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './Components/Home/Home' 
-import Saved from './Components/Saved/saved';
+import Home from '../src/Pages/Home/Home' 
+import Saved from '../src/Pages/Saved/saved';
 
 function App() {
 
