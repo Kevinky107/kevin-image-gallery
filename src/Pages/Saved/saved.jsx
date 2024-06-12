@@ -2,26 +2,29 @@ import { useEffect, useState } from 'react'
 import './saved.css'
 import OrderSelect from '../../Components/orderSelect/orderSelect'
 import Imgdisplay from '../../Components/ImgDisplay/ImgDisplay'
-import { reloadData } from '../../features/saved_images/savedImages'
+import { reloadData, savedImagesData } from '../../features/saved_images/savedImages'
 import { useSelector } from 'react-redux'
 
 function Saved() {
-
-  const [imageList, setImageList] = useState(JSON.parse(localStorage.getItem('saved')) || []);
   const reloadImages = useSelector(reloadData)
+  const images = useSelector(savedImagesData)
 
+  const [imageList, setImageList] = useState(images);
+  
   useEffect(() => {
-    setImageList(JSON.parse(localStorage.getItem('saved')) || [])
+    setImageList(images)
   },[reloadImages])
 
   return (
     <main>
-        {imageList.length == 0 ? 
-        <h2 className='notsaved-label'>YOU DIDN'T SAVE ANY IMAGE YET!</h2> : 
-        <>
-          <OrderSelect/>
-          <Imgdisplay images={imageList} />
-        </>}
+        {
+          !imageList.length ? 
+          <h2 className='notsaved-label'>YOU DIDN'T SAVE ANY IMAGE YET!</h2> : 
+          <>
+            <OrderSelect/>
+            <Imgdisplay images={imageList} />
+          </>
+        }
     </main>
   )
 }
