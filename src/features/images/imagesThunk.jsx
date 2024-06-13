@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getImagesThunk = createAsyncThunk("images/getRandomImagesFromApi", async() => {
-    const request = await fetch("https://api.unsplash.com/photos/random?count=30&client_id=KZhpWnuPZdGM0vb0LUYwSCoG_-T-jLQGFMZENq_QiaI")
+    const request = await fetch(`https://api.unsplash.com/photos/random?count=30&client_id=${import.meta.env.VITE_KEY}`)
     if(request.ok) {
         const data = await request.json()
         return data
@@ -12,7 +12,7 @@ export const getImagesThunk = createAsyncThunk("images/getRandomImagesFromApi", 
 
 export const getSearchedImagesThunk = createAsyncThunk("images/getSearchedImagesFromApi", async(query) => {
     if(query===""){
-        const request = await fetch("https://api.unsplash.com/photos/random?count=30&client_id=KZhpWnuPZdGM0vb0LUYwSCoG_-T-jLQGFMZENq_QiaI")
+        const request = await fetch(`https://api.unsplash.com/photos/random?count=30&client_id=${import.meta.env.VITE_KEY}`)
         if(request.ok) {
             const data = await request.json()
             return data
@@ -21,7 +21,7 @@ export const getSearchedImagesThunk = createAsyncThunk("images/getSearchedImages
         }
     }
     else {
-        const request = await fetch(`https://api.unsplash.com/search/photos?client_id=KZhpWnuPZdGM0vb0LUYwSCoG_-T-jLQGFMZENq_QiaI&per_page=30&query=${query}`)
+        const request = await fetch(`https://api.unsplash.com/search/photos?client_id=${import.meta.env.VITE_KEY}&per_page=30&query=${query}`)
         if(request.ok) {
             const data = await request.json()
             return data.results
