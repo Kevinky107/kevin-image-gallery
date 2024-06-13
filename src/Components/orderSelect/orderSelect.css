@@ -6,24 +6,64 @@
     align-items: center;
 }
 
-select{
-    appearance: none;
-    -webkit-appearance: none;
-	-moz-appearance: none;
-
-    margin-left: 0.7em;
-    display: inline-flex;
-    padding: 0.5em;
-    padding-right: 0;
-    width: 10em;
-    border: solid 3px rgb(255,147,199);
-    color: rgb(255,147,199);
-    text-align: center;
-    font-weight: 700;
-
+.select{
+    position: relative;
 }
 
-select:hover{
+.select-default{
+    margin-left: 0.7em;
+    display: inline-flex;
+    border: solid 3px rgb(255,147,199);
+    color: rgb(255,147,199);
+    background-color: rgba(250, 250, 250, 0);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.button-label{
+    width: 9.7em;
+    padding-block: 0.5em;
+    cursor: pointer;
+}
+
+li svg:hover{
+    color: white;
+    z-index: 1;
+}
+
+li svg{
+    pointer-events: none;
+}
+
+.options {
+    list-style-type: none;
+    position: absolute;
+    top: 2.4em;
+    left: 0.7em;
+    right: 0;
+    z-index: 2;
+    width: 9.8em;
+    border: solid 3px rgb(255,147,199);
+    border-top: none;
+    color: rgb(255,147,199);
+    background-color: rgb(250, 250, 250);
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.option {
+    cursor: pointer;
+    background-color: white;
+    padding-block: 0.4em;
+}
+
+.option:hover{
+    color: white;
+    background-color: rgb(255,147,199);
+}
+
+.select-default:hover{
     cursor: pointer;
 }
 

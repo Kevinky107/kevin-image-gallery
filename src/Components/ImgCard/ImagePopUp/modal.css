@@ -12,7 +12,6 @@
     cursor: default;
     position: fixed;
     z-index: 3;
-    padding: 2em;
     top: 0;
     bottom: 0;
     right: 0;
@@ -23,10 +22,39 @@
     height: 30em;
     box-shadow: 0px 4px 10px 1px rgb(105, 105, 105);
     max-width: 55em;
+    min-width: 18em;
     border-radius: 0.7em;
 }
 
-button{
+.image-data{
+    height: 50%;
+}
+
+.description{
+    height: 50%;
+    position: relative;
+}
+
+.input-description{
+    margin-top: 1.8em;
+    display: block;
+    width: 100%;
+    height: 60%;
+    margin-bottom: 1em;
+    padding: 1em;
+    border: solid 1px rgb(199, 199, 199);
+    border-radius: 0.5em;
+    font-family: Inter;
+    resize: none;
+}
+
+.svg-data{
+    width: 1em;
+    margin-right: 1em;
+    color: rgb(255,147,199);
+}
+
+.buttonPopUp{
     cursor: pointer;
     color: white;
     background-color: rgb(255,147,199);
@@ -36,8 +64,63 @@ button{
     border-radius: 2em;
     font-size: 0.7rem;
     font-weight: 700;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
 }
 
-li{
+.modalUl{
+    margin-top: 0.6em;
+}
+
+.modalLi{
     list-style-type: none;
+    padding-block: 0.5em;
+}
+
+.contenedor{
+    width: 100%;
+    height: 100%;
+    padding: 2em;
+}
+
+.close-modal{
+    position: absolute;
+    top: 1.2em;
+    right: 1.5em;
+    font-size: 1.3em;
+}
+
+@media screen and (min-width: 700px) {
+    
+    .modalCard{
+        align-content: center;
+        
+    }
+
+    .contenedor{
+        display: inline-flex;
+        padding: 3em;
+        padding-top: 7em;
+    }
+    
+    .image-data{
+        height: 100%;
+        width: 50%;
+    }
+
+    .description{
+        height: 100%;
+        width: 50%;
+    }
+
+    .modalLi{
+        padding-block: 1em;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .contenedor{
+        padding: 6em;
+    }
 }

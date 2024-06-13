@@ -4,8 +4,7 @@ export const savedImagesSlice = createSlice({
     name: "saved",
     initialState: {
         data: JSON.parse(localStorage.getItem('saved')) || [],
-        reload: false,
-        //idModal: ""
+        reload: false
     },
     reducers: {
         saveImage : (state, action) => {
@@ -28,15 +27,38 @@ export const savedImagesSlice = createSlice({
             state.data = data
             state.reload = !state.reload
         },
-        /*imagePopUp: (state, action) => {
-            state.idModal = action.payload
+        changeDescription : (state, action) => {
+            state.data.map((image, index) => {
+                if(image.id === action.payload.id)
+                    image.alt = action.payload.alt
+            })
+            localStorage.setItem('saved', JSON.stringify(state.data))
+            state.reload = !state.reload
         },
-        closePopUp: (state, action) => {
-            state.idModal = action.payload
-        }*/
+        sortImages : (state, action) => {
+            state.data.sort((a,b) => {
+                if(action.payload === "dateUp")
+                    return b.date - a.date
+                else if (action.payload === "dateDown")
+                    return a.date - b.date
+                else if(action.payload === "likesUp")
+                    return b.likes - a.likes
+                else if (action.payload === "likesDown")
+                    return a.likes - b.likes
+                else if(action.payload === "widthUp")
+                    return b.width - a.width
+                else if (action.payload === "widthDown")
+                    return a.width - b.width
+                else if(action.payload === "heightUp")
+                    return b.height - a.height
+                else if (action.payload === "heightDown")
+                    return a.height - b.height
+            })
+            state.reload = !state.reload
+        }
     },
 })
 
-export const { saveImage, removeImage, searchImages } = savedImagesSlice.actions
+export const { saveImage, removeImage, searchImages, changeDescription, sortImages } = savedImagesSlice.actions
 export const savedImagesData = (state) => state.saved.data
 export const reloadData = (state) => state.saved.reload
