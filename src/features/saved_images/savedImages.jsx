@@ -42,17 +42,17 @@ export const savedImagesSlice = createSlice({
                 else if (action.payload === "dateDown")
                     return a.date - b.date
                 else if(action.payload === "likesUp")
-                    return b.likes - a.likes
-                else if (action.payload === "likesDown")
                     return a.likes - b.likes
+                else if (action.payload === "likesDown")
+                    return b.likes - a.likes
                 else if(action.payload === "widthUp")
-                    return b.width - a.width
-                else if (action.payload === "widthDown")
                     return a.width - b.width
+                else if (action.payload === "widthDown")
+                    return b.width - a.width
                 else if(action.payload === "heightUp")
-                    return b.height - a.height
-                else if (action.payload === "heightDown")
                     return a.height - b.height
+                else if (action.payload === "heightDown")
+                    return b.height - a.height
             })
             state.reload = !state.reload
         }
