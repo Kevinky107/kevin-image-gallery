@@ -6,7 +6,7 @@ export const getImagesThunk = createAsyncThunk("images/getRandomImagesFromApi", 
         const data = await request.json()
         return data
     } else {
-       throwError("Error trying to obtain random data from API") 
+       throw new Error("Error trying to obtain random data from API") 
     }
 })
 
@@ -17,7 +17,7 @@ export const getSearchedImagesThunk = createAsyncThunk("images/getSearchedImages
             const data = await request.json()
             return data
         } else {
-           throwError("Error trying to obtain random data from API") 
+           throw new Error("Error trying to obtain random data from API") 
         }
     }
     else {
@@ -26,7 +26,7 @@ export const getSearchedImagesThunk = createAsyncThunk("images/getSearchedImages
             const data = await request.json()
             return data.results
         } else {
-            throwError("Error trying to obtain data with QUERY from API") 
+            throw new Error("Error trying to obtain data with QUERY from API") 
         }
     }
 })
